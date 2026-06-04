@@ -1,0 +1,73 @@
+{% extends "base.html" %} 
+
+{% block title %}Contact{% endblock title %} 
+
+{% block body %}
+<div class="Container-fluid mx-0">
+  <img
+    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&h=400&q=80"
+    class="d-block w-100 my-0"
+    alt="Contact Us"
+  />
+</div>
+<div class="container mb-3 py-4">
+  <h1 class="text-center">Contact Us</h1>
+  <form method="post" action="/contact">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="name" class="form-label"
+      >Name</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name = "name"
+      placeholder="Enter your name"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Email Address</label
+    >
+    <input
+      type="email"
+      class="form-control"
+      name= "email"
+      id="email"
+     
+      placeholder="Enter your email"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Contact No.</label
+    >
+    <input
+      type="phone"
+      class="form-control"
+      name="name"
+      id="number"
+     
+      placeholder="Enter your contact number"
+    />
+  </div>
+
+
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label"
+      >Tell me about what you want to contact me for..</label
+    >
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="3"
+    ></textarea>
+  </div>
+  <button class="btn btn-primary text-center" type="Submit">Submit</button>
+  </form>
+</div>
+
+{% endblock body %}
